@@ -29,29 +29,8 @@ namespace Presentation.WpfApp
             _productService = productService;
         }
 
-        private void BtnAdd_Click(object sender, RoutedEventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(AddArticleNumber.Text))
-            {
-                var input = new ProductDTO 
-                { 
-                    ArticleNumber = AddArticleNumber.Text,
-                    Title = AddTitle.Text,
-                    Description = AddDescription.Text,
-                    Price = decimal.Parse(AddPrice.Text),
-                    CategoryName = AddCategoryName.Text,
-                    ManufacturerName = AddManufacturerName.Text,    
-                                       
-                
-                };
-                var result = _productService.CreateProduct(input);
-            }
+       
 
-        }
-
-        private void BtnQuit_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

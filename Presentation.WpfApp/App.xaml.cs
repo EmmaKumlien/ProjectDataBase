@@ -4,6 +4,7 @@ using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Presentation.WpfApp.ViewModels;
 using System.Configuration;
 using System.Data;
 using System.Windows;
@@ -35,6 +36,7 @@ namespace Presentation.WpfApp
 
 
                 services.AddSingleton<MainWindow>();
+                services.AddSingleton<MainViewModel>();
 
             }).Build();
         }

@@ -30,8 +30,8 @@
                 <TextBlock x:Name="AddManufacturerName"/>
         </StackPanel>
             <StackPanel Grid.Row="1">
-            <Button x:Name="BtnAdd"  Content="Add Product" Margin="10" Click="BtnAdd_Click"/>
-            <Button x:Name="BtnQuit" Content="Exit Aplication" Margin="10" Background ="Black" Foreground="White" Click="BtnQuit_Click"/>
+            <Button x:Name="BtnAdd"  Content="Add Product" Margin="10" />
+            <Button x:Name="BtnQuit" Content="Exit Aplication" Margin="10" Background ="Black" Foreground="White" />
             </StackPanel>
         
     </Grid>

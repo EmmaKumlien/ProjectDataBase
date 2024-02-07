@@ -24,12 +24,12 @@
             
         </StackPanel>
         <StackPanel  Grid.Row="1">
-            <Button x:Name="BtnAddMenu"  Content="Add Product" Margin="10" Click="BtnAddMenu_Click"/>
-            <Button x:Name="BtnViewAll" Content="View all Product" Margin="10" Click="BtnViewAll_Click"/>
-            <Button x:Name="BtnViewOneMenu" Content="Fins one Product" Margin="10" Click="BtnViewOneMenu_Click"/>
-            <Button x:Name="BtnUpdateMenu" Content="Update Product" Margin="10" Click="BtnUpdateMenu_Click"/>
-            <Button x:Name="BtnRemoveMenu" Content="Delete Product" Margin="10" Click="BtnRemoveMenu_Click"/>
-            <Button x:Name="BtnQuit" Content="Exit Aplication" Margin="10" Background ="Black" Foreground="White" Click="BtnQuit_Click"/>
+            <Button x:Name="BtnAddMenu"  Content="Add Product" Margin="10" />
+            <Button x:Name="BtnViewAll" Content="View all Product" Margin="10" />
+            <Button x:Name="BtnViewOneMenu" Content="Fins one Product" Margin="10" />
+            <Button x:Name="BtnUpdateMenu" Content="Update Product" Margin="10" />
+            <Button x:Name="BtnRemoveMenu" Content="Delete Product" Margin="10" />
+            <Button x:Name="BtnQuit" Content="Exit Aplication" Margin="10" Background ="Black" Foreground="White"/>
         </StackPanel>
     </Grid>
 </Window>
