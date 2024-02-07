@@ -2,33 +2,47 @@
 using CommunityToolkit.Mvvm.Input;
 using Infrastructure.Dtos;
 using Infrastructure.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Presentation.WpfApp.ViewModels;
 
-partial class MainViewModel : ObservableObject
+public partial class MainViewModel : ObservableObject
 {
     [ObservableProperty]
-    private ProductDTO _product = new ProductDTO();
+    private ObservableObject? _currentViewModel;
+    
+    private readonly IServiceProvider _serviceProvider;
 
-    [ObservableProperty]
-    private ProductService _productService;
-
-    [RelayCommand]
-    public void AddCosutmer()
+    public MainViewModel(IServiceProvider serviceProvider)
     {
-        if (!string.IsNullOrWhiteSpace(_product.ArticleNumber)&& !string.IsNullOrWhiteSpace(_product.Title))
-        {
-            
-            _productService.CreateProduct(_product);
-            _product = new ProductDTO();
-        }
+        _serviceProvider = serviceProvider;
+        CurrentViewModel = _serviceProvider.GetRequiredService<MainMenuWindowViewModel>();
     }
 
-    [RelayCommand]
-    public void RemoveCosutmer()
-    {
-        if (string.IsNullOrWhiteSpace(_product.ArticleNumber))
-        _productService.DeleteProduct(_product);
-    }
+
+
+
+
+
+    //[ObservableProperty]
+    //private ProductService _productService;
+
+    //[RelayCommand]
+    //public void AddCosutmer()
+    //{
+    //    if (!string.IsNullOrWhiteSpace(_product.ArticleNumber)&& !string.IsNullOrWhiteSpace(_product.Title))
+    //    {
+
+    //        _productService.CreateProduct(_product);
+    //        _product = new ProductDTO();
+    //    }
+    //}
+
+    //[RelayCommand]
+    //public void RemoveCosutmer()
+    //{
+    //    if (string.IsNullOrWhiteSpace(_product.ArticleNumber))
+    //    _productService.DeleteProduct(_product);
+    //}
 
 }

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace Presentation.WpfApp.ViewModels
+namespace Presentation.WpfApp.ViewModels;
+
+public partial class UpdateProductViewModel : ObservableObject
 {
-    internal class UpdateProductViewModel
-    {
-    }
 }

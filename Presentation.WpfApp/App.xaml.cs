@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Presentation.WpfApp.ViewModels;
+using Presentation.WpfApp.Views;
 using System.Configuration;
 using System.Data;
 using System.Windows;
@@ -37,6 +38,21 @@ namespace Presentation.WpfApp
 
                 services.AddSingleton<MainWindow>();
                 services.AddSingleton<MainViewModel>();
+                services.AddTransient<MainMenuWindowViewModel>();
+
+                services.AddTransient<AddProductViewModel>();
+                services.AddTransient<ListProductViewModel>();
+                services.AddTransient<RemoveProductViewModel>();
+                services.AddTransient<UpdateProductViewModel>();
+                services.AddTransient<ViewOneProductViewModel>();
+
+                services.AddTransient<AddProductView>();
+                services.AddTransient<UpdateProductView>();
+                services.AddTransient<ViewOneProductView>();
+                services.AddTransient<RemoveProductView>();
+                services.AddTransient<ListProductView>();
+
+
 
             }).Build();
         }

@@ -4,32 +4,44 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Presentation.WpfApp"
+        
+        xmlns:viewmodels="clr-namespace:Presentation.WpfApp.ViewModels"
+        xmlns:views="clr-namespace:Presentation.WpfApp.Views"
+        d:DataContext="{d:DesignInstance Type=views:MainWindowView}"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="300">
     <Grid Margin="20">
-        <Grid.RowDefinitions>
-            
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        
 
-        
+        <ContentControl Content="{Binding CurrentViewModel}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type viewmodels:MainMenuWindowViewModel}">
+                    <views:MainWindowView/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type viewmodels:AddProductViewModel}">
+                    <views:AddProductView/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type viewmodels:ListProductViewModel}">
+                    <views:ListProductView/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type viewmodels:ViewOneProductViewModel}">
+                    <views:ViewOneProductView/>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type viewmodels:UpdateProductViewModel}">
+                    <views:UpdateProductView/>
+                </DataTemplate>
+
+
+                <DataTemplate DataType="{x:Type viewmodels:RemoveProductViewModel}">
+                    <views:RemoveProductView/>
+                </DataTemplate>
+            </ContentControl.Resources>
             
-        
-        <StackPanel Grid.Row="0" >
-            <Label Content="Choose option below" HorizontalContentAlignment="Center" FontWeight="Bold"/>
-          
-            
-        </StackPanel>
-        <StackPanel  Grid.Row="1">
-            <Button x:Name="BtnAddMenu"  Content="Add Product" Margin="10" />
-            <Button x:Name="BtnViewAll" Content="View all Product" Margin="10" />
-            <Button x:Name="BtnViewOneMenu" Content="Fins one Product" Margin="10" />
-            <Button x:Name="BtnUpdateMenu" Content="Update Product" Margin="10" />
-            <Button x:Name="BtnRemoveMenu" Content="Delete Product" Margin="10" />
-            <Button x:Name="BtnQuit" Content="Exit Aplication" Margin="10" Background ="Black" Foreground="White"/>
-        </StackPanel>
+        </ContentControl>
+       
     </Grid>
 </Window>
