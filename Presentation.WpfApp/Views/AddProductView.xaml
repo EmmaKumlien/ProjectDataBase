@@ -20,7 +20,7 @@
             <Label Content="Fill in information below" Margin="0,0,0,10" HorizontalContentAlignment="Center" FontWeight="Bold"/>
 
             <Label Content="Article Number:"/>
-            <TextBox />
+            <TextBox Text="{Binding Path=AddProductCommand}"/>
             <Label Content="Title:"/>
             <TextBox x:Name="AddTitle"/>
             <Label Content="Description:"/>

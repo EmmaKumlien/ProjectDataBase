@@ -61,7 +61,7 @@ public class ProductService(CategoryRepository categoryRepository, ProductReposi
         return false;
     }
     
-    public IEnumerable<ProductDTO> GetAllProducts()
+    public IEnumerable<ProductDTO> GetAllProducts(ProductDTO product)
     {
         var products = new List<ProductDTO>();
         try
@@ -75,8 +75,8 @@ public class ProductService(CategoryRepository categoryRepository, ProductReposi
                     Title = item.Title,
                     Description = item.Description,
                     Price = item.Price,
-                    CategoryName = item.Category.CategoryName,
-                    ManufacturerName = item.Manufacturer.ManufacturerName
+                    CategoryName = product.CategoryName,
+                    ManufacturerName = product.ManufacturerName
                 });
                 
             }

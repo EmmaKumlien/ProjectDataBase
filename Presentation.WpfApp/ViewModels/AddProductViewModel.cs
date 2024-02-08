@@ -22,7 +22,7 @@ public partial class AddProductViewModel :ObservableObject
     private void AddProduct(ProductDTO product)
     {
         var result = _productService.CreateProduct(new ProductDTO{
-            ArticleNumber = Console.ReadLine()!,
+            ArticleNumber = product.ArticleNumber,
             Title = Console.ReadLine()!,
             Description = Console.ReadLine()!,
             Price = decimal.Parse(Console.ReadLine()!),
