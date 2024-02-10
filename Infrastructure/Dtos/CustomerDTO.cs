@@ -2,7 +2,7 @@
 
 namespace Infrastructure.Dtos;
 
-internal class CustomerDTO
+public class CustomerDTO
 {
     public int Id { get; set; }    
     public string FirstName { get; set; } = null!;
